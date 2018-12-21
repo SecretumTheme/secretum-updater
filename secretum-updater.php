@@ -5,7 +5,7 @@ namespace SecretumUpdater;
  * Plugin Name: Secretum Updater
  * Plugin URI: https://github.com/SecretumTheme/secretum-updater
  * Description: Pending...
- * Version: 0.0.2
+ * Version: 0.0.3
  * License: GNU GPLv3
  * Copyright (c) 2018 Secretum Theme
  * Author: Secretum Theme

@@ -4,7 +4,7 @@
 * **Tags:** 
 * **Requires at least:** 4.6
 * **Tested up to:** 4.8.1
-* **Stable tag:** 0.0.2
+* **Stable tag:** 0.0.3
 * **License:** GNU GPLv3
 * **License URI:** https://github.com/SecretumTheme/secretum-updater/blob/master/LICENSE
 
