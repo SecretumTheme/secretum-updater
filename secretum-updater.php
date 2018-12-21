@@ -8,7 +8,7 @@ namespace SecretumUpdater;
  * Version: 0.0.3
  * License: GNU GPLv3
  * Copyright (c) 2018 Secretum Theme
- * Author: Secretum Theme
+ * Author: SecretumTheme
  * Author URI: https://github.com/SecretumTheme
  * Text Domain: secretum-updater
  *
@@ -37,10 +37,16 @@ register_activation_hook(SECRETUM_UPDATER_PLUGIN_FILE, '\SecretumUpdater\Functio
 add_filter('plugin_row_meta', '\SecretumUpdater\Functions\links', 10, 2);
 
 
-// Update This Plugin
-include_once(SECRETUM_UPDATER);
-$secretum_updater = \Puc_v4_Factory::buildUpdateChecker(
-	'https://raw.githubusercontent.com/SecretumTheme/secretum-updater/master/updates.json',
-	SECRETUM_UPDATER_PLUGIN_FILE,
-	'secretum-updater'
-);
+// Include Updater Class
+if (!class_exists('Puc_v4p4_Autoloader')) {
+	include_once(SECRETUM_UPDATER_PLUGIN_DIR . '/puc/plugin-update-checker.php');
+}
+
+// Update Plugin
+if (class_exists('Puc_v4p4_Autoloader')) {
+	$secretum_updater = \Puc_v4_Factory::buildUpdateChecker(
+		'https://raw.githubusercontent.com/SecretumTheme/secretum-updater/master/updates.json',
+		SECRETUM_UPDATER_PLUGIN_FILE,
+		'secretum-updater'
+	);
+}
