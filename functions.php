@@ -15,7 +15,7 @@ namespace SecretumUpdater\Functions {
 	function update($json_url, $file, $slug) {
 		if (isset($json_url) && isset($file) && isset($slug)) {
 			// Theme Update Checker
-			include_once(SECRETUM_UPDATER_PLUGIN_DIR . '/puc/plugin-update-checker.php');
+			include_once(SECRETUM_UPDATER);
 
 			// Build Check
 			$update = \Puc_v4_Factory::buildUpdateChecker(

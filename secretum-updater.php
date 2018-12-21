@@ -4,8 +4,8 @@ namespace SecretumUpdater;
 /**
  * Plugin Name: Secretum Updater
  * Plugin URI: https://github.com/SecretumTheme/secretum-updater
- * Description: Pending...
- * Version: 0.0.3
+ * Description: Updates the Secretum Theme & Secretum Plugins.
+ * Version: 0.0.4
  * License: GNU GPLv3
  * Copyright (c) 2018 Secretum Theme
  * Author: SecretumTheme
@@ -35,6 +35,10 @@ register_activation_hook(SECRETUM_UPDATER_PLUGIN_FILE, '\SecretumUpdater\Functio
 
 // Inject Links Into Plugin.php Admin
 add_filter('plugin_row_meta', '\SecretumUpdater\Functions\links', 10, 2);
+
+
+// Updater Action
+add_action('secretum_updater', '\SecretumUpdater\Functions\update', 10, 3);
 
 
 // Include Updater Class

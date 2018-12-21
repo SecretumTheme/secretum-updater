@@ -4,17 +4,17 @@
 * **Tags:** 
 * **Requires at least:** 4.6
 * **Tested up to:** 4.8.1
-* **Stable tag:** 0.0.3
+* **Stable tag:** 0.0.4
 * **License:** GNU GPLv3
 * **License URI:** https://github.com/SecretumTheme/secretum-updater/blob/master/LICENSE
 
 
-Updates Secretum Theme & Plugins.
+Updates the Secretum Theme & Secretum Plugins.
 
 
 ## Description
 
-Updates Secretum Theme & Plugins.
+Updates the Secretum Theme & Secretum Plugins.
 
 
 ## License
@@ -39,13 +39,25 @@ if (defined('SECRETUM_UPDATER') && file_exists(SECRETUM_UPDATER)) {
 }
 ```
 
-file: updates.json
+themes: updates.json
 ```
  {
     "version": "0.0.x",
     "details_url": "https://domain.com/details",
     "download_url": "https://domain.com/download.zip"
  }
+```
+
+plugins: updates.json
+```
+{
+	"name" : "Plugin Name",
+	"version" : "0.0.x",
+	"download_url" : "https://domain.com/download.zip",
+	"sections" : {
+		"description" : "About...."
+	}
+}
 ```
 
 ## Changelog
