@@ -29,13 +29,13 @@ This is a freemium plugin. The Secretum Updater plugin is licensed under GNU GPL
 Pending...
 
 ```
-if (defined('SECRETUM_UPDATER') && file_exists(SECRETUM_UPDATER)) {
-	include_once(ABSPATH . '/wp-content/plugins/secretum-updater/puc/plugin-update-checker.php');
-	$secretum_updater = Puc_v4_Factory::buildUpdateChecker(
-		'https://valid-url-to/updates.json',
-		__FILE__,
-		'slug-for-theme-or-plugin'
-	);
+if (file_exists(WP_PLUGIN_DIR . '/secretum-updater/puc/plugin-update-checker.php')) {
+    include_once(WP_PLUGIN_DIR . '/secretum-updater/puc/plugin-update-checker.php');
+    $secretum_hf_updater = \Puc_v4_Factory::buildUpdateChecker(
+        'https://domain.com/updates.json',
+        __FILE__,
+        'plugin-slug-name'
+    );
 }
 ```
 

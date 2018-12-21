@@ -4,7 +4,7 @@ Contributors: SecretumTheme
 Tags: 
 Requires at least: 4.6
 Requires PHP: 5.6
-Tested up to: 5.0
+Tested up to: 5.0.2
 Stable tag: 0.0.4
 License: GNU GPLv3
 License URI: https://github.com/SecretumTheme/secretum-updater/blob/master/LICENSE
@@ -29,13 +29,13 @@ This is a freemium plugin. The Secretum Updater plugin is licensed under GNU GPL
 Pending...
 
 ```
-if (defined('SECRETUM_UPDATER') && file_exists(SECRETUM_UPDATER)) {
-	include_once(ABSPATH . '/wp-content/plugins/secretum-updater/puc/plugin-update-checker.php');
-	$secretum_updater = Puc_v4_Factory::buildUpdateChecker(
-		'https://valid-url-to/updates.json',
-		__FILE__,
-		'slug-for-theme-or-plugin'
-	);
+if (file_exists(WP_PLUGIN_DIR . '/secretum-updater/puc/plugin-update-checker.php')) {
+    include_once(WP_PLUGIN_DIR . '/secretum-updater/puc/plugin-update-checker.php');
+    $secretum_hf_updater = \Puc_v4_Factory::buildUpdateChecker(
+        'https://domain.com/updates.json',
+        __FILE__,
+        'plugin-slug-name'
+    );
 }
 ```
 
